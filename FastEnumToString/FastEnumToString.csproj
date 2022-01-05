@@ -7,14 +7,30 @@
 		<AssemblyName>FastEnumToString</AssemblyName>
 		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
 		<AnalysisLevel>latest</AnalysisLevel>
-		<PackageId>$(AssemblyName)_Dániel_Szöllősi</PackageId>
+		<PackageId>$(AssemblyName)</PackageId>
 		<Version>1.0.0</Version>
 		<Authors>Dániel Szöllősi</Authors>
-		<Company />
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>Enum, ToString, Enum-ToString, Fast, Efficient, Source Generator</PackageTags>
 
 		<IncludeBuildOutput>false</IncludeBuildOutput>
+
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+
+		<RepositoryUrl>https://github.com/D4nyi/FastEnumToString</RepositoryUrl>
+
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+
+		<PackageProjectUrl>https://github.com/D4nyi/FastEnumToString</PackageProjectUrl>
+
+		<Description>Source Generator generating ToString extension methods for any enums</Description>
+
+		<DebugType>portable</DebugType>
+
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		
+		<!--<DevelopmentDependency>true</DevelopmentDependency>
+		<IsPackable>true</IsPackable>-->
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -27,6 +43,10 @@
 
 	<ItemGroup>
 		<None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+		<None Include="..\README.md">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		</None>
 	</ItemGroup>
 
 </Project>
