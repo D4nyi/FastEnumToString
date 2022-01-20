@@ -8,7 +8,6 @@
 		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
 		<AnalysisLevel>latest</AnalysisLevel>
 		<PackageId>$(AssemblyName)</PackageId>
-		<Version>1.0.2.1</Version>
 		<Authors>Dániel Szöllősi</Authors>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>Enum, ToString, Enum-ToString, Fast, Efficient, Source Generator</PackageTags>
@@ -29,6 +28,8 @@
 
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 
+		<Version>1.0.3</Version>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<DevelopmentDependency>true</DevelopmentDependency>
 		<IsPackable>true</IsPackable>
 		<ApplicationIcon>enum.ico</ApplicationIcon>
