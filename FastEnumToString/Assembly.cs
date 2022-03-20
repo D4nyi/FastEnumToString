@@ -5,5 +5,5 @@
 
 internal readonly struct Assembly
 {
-    internal const string Version = "1.0.3";
+    internal const string Version = "1.1.0";
 }

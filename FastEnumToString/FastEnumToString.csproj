@@ -7,49 +7,57 @@
 		<AssemblyName>FastEnumToString</AssemblyName>
 		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
 		<AnalysisLevel>latest</AnalysisLevel>
+
 		<PackageId>$(AssemblyName)</PackageId>
 		<Authors>Dániel Szöllősi</Authors>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>Enum, ToString, Enum-ToString, Fast, Efficient, Source Generator</PackageTags>
-
-		<IncludeBuildOutput>false</IncludeBuildOutput>
-
-		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-
 		<RepositoryUrl>https://github.com/D4nyi/FastEnumToString</RepositoryUrl>
-
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-
 		<PackageProjectUrl>https://github.com/D4nyi/FastEnumToString</PackageProjectUrl>
-
 		<Description>Source Generator generating ToString extension methods for any enums</Description>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 
 		<DebugType>portable</DebugType>
 
-		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-
-		<Version>1.0.3</Version>
+		<Version>1.1.0</Version>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<DevelopmentDependency>true</DevelopmentDependency>
 		<IsPackable>true</IsPackable>
 		<ApplicationIcon>enum.ico</ApplicationIcon>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+		<RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+		<PackageIcon>enum.png</PackageIcon>
+		<PackageIconUrl>https://github.com/D4nyi/FastEnumToString/blob/master/FastEnumToString/enum.svg</PackageIconUrl>
 	</PropertyGroup>
 
-	<ItemGroup>
-	  <Content Include="enum.ico" />
-	</ItemGroup>
+	<PropertyGroup>
+	  <NoWarn>1701;1702;NU5128</NoWarn>
+	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.3">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.0.0" />
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.1.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+		<None Include="$(OutputPath)\$(AssemblyName).dll">
+			<Pack>True</Pack>
+			<PackagePath>/analyzers/dotnet/cs</PackagePath>
+			<Visible>False</Visible>
+		</None>
+
 		<None Include="..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+
+		<None Update="enum.png">
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
 		</None>
