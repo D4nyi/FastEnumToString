@@ -22,6 +22,7 @@ namespace FastEnumToString
     public class ExcludeToStringAttribute : global::System.Attribute { }
 }
 ";
+        
         /// <inheritdoc/>
         public void Initialize(GeneratorInitializationContext context)
         {
@@ -56,18 +57,16 @@ namespace FastEnumToString
                 .TryGetValue("build_property.FastEnumFallbackValue", out string fallback);
             context
                 .AnalyzerConfigOptions.GlobalOptions
-                .TryGetValue("build_property.FastEnumIncludeFlags", out string includeFlagsStr);
+                .TryGetValue("build_property.rootnamespace", out string rootNameSpace);
 
             FallbackType fallbackType = ParseFallbackValue(fallback);
-            bool includeFlags = ParseIncludeFlags(includeFlagsStr);
 
-            EnumProcessor processor = new EnumProcessor(context)
+            EnumProcessor processor = new EnumProcessor(context, rootNameSpace)
             {
-                Fallback = fallbackType,
-                IncludeFlags = includeFlags
+                Fallback = fallbackType
             };
 
-            string generatedClass = processor.Process(reciever.Enums, reciever.Flags);
+            string generatedClass = processor.Process(reciever.Enums);
 
             context.AddSource(GeneratedFileName, generatedClass);
         }
@@ -89,12 +88,6 @@ namespace FastEnumToString
                 default:
                     return FallbackType.Throw;
             }
-        }
-
-        private static bool ParseIncludeFlags(string includeFlags)
-        {
-            return !String.IsNullOrWhiteSpace(includeFlags)
-                && includeFlags.Trim().Equals("true", StringComparison.OrdinalIgnoreCase);
         }
     }
 }

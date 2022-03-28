@@ -1,6 +1,5 @@
 <Project>
     <ItemGroup>
         <CompilerVisibleProperty Include="FastEnumFallbackValue" />
-		<CompilerVisibleProperty Include="FastEnumIncludeFlags" />
 	</ItemGroup>
 </Project>
