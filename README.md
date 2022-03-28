@@ -60,3 +60,14 @@ public static class EnumStringConverter
     }
 }
 ```
+
+## Configure
+```csproj
+<PropertyGroup>
+    <RootNamespace>FastEnumToString</RootNamespace> <!-- Optional, marks where the extension class will be generated -->
+    <FastEnumFallbackValue>Default</FastEnumFallbackValue> <!-- Available values: Default, First, Throw -->
+</PropertyGroup>
+```
+
+- Default, First means the same: uses the first avalilable enum member in the `switch`'s default arm,
+- Throw means: throwing an `ArgumentOutOfRangeException`
