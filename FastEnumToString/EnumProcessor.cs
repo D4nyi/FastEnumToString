@@ -18,7 +18,8 @@ namespace FastEnumToString
         private const string GeneratedCodeAttr =
             "[global::System.CodeDom.Compiler.GeneratedCodeAttribute(\"" + nameof(FastEnumToString) + "." + nameof(EnumToStringGenerator) + "\", \"" + Assembly.Version + "\")]";
 
-        private const string MethodTemplate = @"        {0} static string FastToString(this {1} enumValue)
+        private const string MethodTemplate = @"
+        {0} static string FastToString(this {1} enumValue)
         {{
             return enumValue switch
             {{
@@ -33,9 +34,7 @@ namespace {1}
 {{
     {2}
     public static class EnumStringConverter
-    {{
-{3}
-    }}
+    {{{3}    }}
 }}";
         #endregion
 
