@@ -22,7 +22,7 @@ namespace FastEnumToString
     public class ExcludeToStringAttribute : global::System.Attribute { }
 }
 ";
-        
+
         /// <inheritdoc/>
         public void Initialize(GeneratorInitializationContext context)
         {

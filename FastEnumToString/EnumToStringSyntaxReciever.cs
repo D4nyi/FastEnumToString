@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -9,7 +8,7 @@ namespace FastEnumToString
     internal sealed class EnumToStringSyntaxReciever : ISyntaxReceiver
     {
         private readonly HashSet<EnumDeclarationSyntax> _enums;
-        
+
         public IReadOnlyCollection<EnumDeclarationSyntax> Enums { get => _enums; }
 
         public EnumToStringSyntaxReciever()
