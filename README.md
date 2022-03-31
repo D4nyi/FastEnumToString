@@ -5,13 +5,24 @@ Source Generator generating ToString extension methods for any enums.
 ## Example
 From:
 ```csharp
+using FastEnumToString;
+
 namespace Enums
 {
+    [OverrideToStringDefault(1)]
     public enum Color
     {
         Red,
         Green,
         Blue
+    }
+
+    [ExcludeToString] // will be excluded
+    public enum Car
+    {
+        Volskwage,
+        Audi,
+        BMW
     }
 }
 
@@ -33,7 +44,7 @@ The followning will be generated:
 using Enums;
 using Models;
 
-[global::System.CodeDom.Compiler.GeneratedCodeAttribute("FastEnumToString.EnumToStringGenerator", "1.0.2.0")]
+[global::System.CodeDom.Compiler.GeneratedCodeAttribute("FastEnumToString.EnumToStringGenerator", "1.2.0")]
 public static class EnumStringConverter
 {
     public static string FastToString(this Color enumValue)
@@ -43,7 +54,7 @@ public static class EnumStringConverter
             Color.Red => nameof(Color.Red),
             Color.Green => nameof(Color.Green),
             Color.Blue => nameof(Color.Blue),
-            _ => throw new ArgumentOutOfRangeException(nameof(enumValue), enumValue, null)
+            _ => nameof(Color.Green)
         };
     }
 
@@ -65,9 +76,9 @@ public static class EnumStringConverter
 ```csproj
 <PropertyGroup>
     <RootNamespace>FastEnumToString</RootNamespace> <!-- Optional, marks where the extension class will be generated -->
-    <FastEnumFallbackValue>Default</FastEnumFallbackValue> <!-- Available values: Default, First, Throw -->
+    <FastEnumFallbackValue>Default</FastEnumFallbackValue> <!-- Available values: First, Throw -->
 </PropertyGroup>
 ```
 
-- Default, First means the same: uses the first avalilable enum member in the `switch`'s default arm,
-- Throw means: throwing an `ArgumentOutOfRangeException`
+- First: uses the first avalilable enum member in the `switch`'s default arm,
+- Throw: throwing an `ArgumentOutOfRangeException`

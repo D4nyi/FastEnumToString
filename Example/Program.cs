@@ -1,9 +1,14 @@
 ﻿using FastEnumToString;
+using MyNamespace;
+using Example;
 
-Console.WriteLine("Hello, World!");
+Color c = (Color)5;
+Console.WriteLine(c);
+Console.WriteLine(c.FastToString());
 
 namespace MyNamespace
 {
+    [OverrideToStringDefault(-1)]
     public enum Color
     {
         Red,

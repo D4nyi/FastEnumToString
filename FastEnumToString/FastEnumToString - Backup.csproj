@@ -17,9 +17,7 @@
 		<PackageProjectUrl>https://github.com/D4nyi/FastEnumToString</PackageProjectUrl>
 		<Description>Source Generator generating ToString extension methods for any enums</Description>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-
-		<PackageReleaseNotes>Added support for excluding enums and overriding the default swtich branch via attributes!</PackageReleaseNotes>
-
+		
 		<DebugType>portable</DebugType>
 
 		<Version>1.2.0</Version>
@@ -33,8 +31,10 @@
 		<RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
 		<PackageIcon>enum.png</PackageIcon>
 		<PackageIconUrl>https://github.com/D4nyi/FastEnumToString/blob/master/FastEnumToString/enum.svg</PackageIconUrl>
+	</PropertyGroup>
 
-		<NoWarn>1701;1702;NU5128</NoWarn>
+	<PropertyGroup>
+	  <NoWarn>1701;1702;NU5128</NoWarn>
 	</PropertyGroup>
 
 	<ItemGroup>

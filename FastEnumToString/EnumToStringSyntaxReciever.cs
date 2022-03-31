@@ -20,7 +20,7 @@ namespace FastEnumToString
         public void OnVisitSyntaxNode(SyntaxNode syntaxNode)
         {
             if (syntaxNode is EnumDeclarationSyntax enumDeclarationSyntax
-                && !enumDeclarationSyntax.AttributeLists.HasAttribute())
+                && !enumDeclarationSyntax.AttributeLists.HasFlagsOrExcludeAttribute())
             {
                 _ = _enums.Add(enumDeclarationSyntax);
             }
