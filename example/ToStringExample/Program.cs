@@ -1,5 +1,4 @@
 ﻿using FastEnumToString;
-using ToStringExample;
 
 using MyNamespace;
 
@@ -31,7 +30,9 @@ namespace MyNamespace
         Blue,
     }
 
-    [ToString, Flags] // Flags are not yet supported
+    // Flags are not fully supported,
+    // only distinct values can be stringified
+    [ToString, Flags]
     public enum Devices
     {
         Phone = 1,

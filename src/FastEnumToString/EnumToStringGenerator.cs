@@ -29,7 +29,7 @@ namespace FastEnumToString
     public enum ToStringDefault
     {{
         /// <summary>
-        /// The global default value, has no effect
+        /// Like the built-in `ToString` will convert the enum to its numeric representation
         /// </summary>
         Default,
         /// <summary>
@@ -147,7 +147,7 @@ namespace FastEnumToString
         {
             if (String.IsNullOrWhiteSpace(defaultBehaviour))
             {
-                return 2;
+                return 0;
             }
 
             defaultBehaviour = defaultBehaviour!.Trim();

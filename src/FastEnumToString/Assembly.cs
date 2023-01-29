@@ -9,6 +9,6 @@
 
 internal readonly ref struct Assembly
 {
-    internal const string Version = "2.0.0-beta";
+    internal const string Version = "2.0.0";
     internal const string CorrectVersion = "2.0.0";
 }

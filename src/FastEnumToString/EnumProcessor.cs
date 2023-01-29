@@ -101,13 +101,17 @@ namespace FastEnumToString
                 ? defaultBehaviour
                 : toGenerate.DefaultValue;
 
-            if (defaultBranch == 2)
+            if (defaultBranch == 0)
             {
-                builder.Append(SwitchDefaultThrow);
+                builder.Append($"            _ => ((int)enumValue).ToString()");
+            }
+            else if(defaultBranch == 1)
+            {
+                builder.AppendFormat(_invariant, SwitchDefault, toGenerate.Name, toGenerate.Values[0]);
             }
             else
             {
-                builder.AppendFormat(_invariant, SwitchDefault, toGenerate.Name, toGenerate.Values[0]);
+                builder.Append(SwitchDefaultThrow);
             }
 
             string result = builder.ToString();

@@ -22,12 +22,12 @@
 		<Description>Source Generator generating ToString extension methods for any enums</Description>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 
-		<PackageReleaseNotes>Generator is reimplemented as an incremental generator. From now users must opt-in for FastToString method generation!</PackageReleaseNotes>
+		<PackageReleaseNotes>Default behaviour changed!</PackageReleaseNotes>
 
 		<DebugType>portable</DebugType>
 
-		<PackageVersion>2.0.0-beta</PackageVersion>
-		<Version>2.0.0-beta</Version>
+		<PackageVersion>2.0.0</PackageVersion>
+		<Version>2.0.0</Version>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<DevelopmentDependency>true</DevelopmentDependency>
